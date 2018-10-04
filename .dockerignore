@@ -1,0 +1,7 @@
+Dockerfile
+Dockerfile.Build
+Makefile
+Jenkinsfile
+LICENSE.md
+docker-compose.yml
+.gitignore
