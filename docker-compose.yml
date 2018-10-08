@@ -2,6 +2,7 @@ version: '2.3'
 services:
   owl-mqtt-bridge:
     build: .
+    image: matthewbaggett/owl-intuition-mqtt-bridge
     environment:
       - MQTT_HOST=mqtt://10.188.5.1
     volumes:

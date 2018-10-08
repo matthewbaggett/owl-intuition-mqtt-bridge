@@ -1,13 +1,17 @@
 all: prepare build push
 
 prepare:
-	docker build -f Dockerfile.Build .
+	docker-compose build owl-mqtt-bridge
 
 build:
-	docker build -t matthewbaggett/owl-intuition-mqtt-bridge .
+	docker-compose run owl-mqtt-bridge npm install
+	docker-compose run owl-mqtt-bridge npm rebuild
+
+update:
+	docker-compose run owl-mqtt-bridge npm update
 
 push:
-	docker push matthewbaggett/owl-intuition-mqtt-bridge
+	docker-compose push owl-mqtt-bridge
 
 run:
 	docker run \
